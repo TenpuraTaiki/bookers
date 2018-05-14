@@ -1,0 +1,2 @@
+class Hon < ApplicationRecord
+end
