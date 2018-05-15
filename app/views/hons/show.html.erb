@@ -1,2 +1,6 @@
-<h1>Hons#show</h1>
-<p>Find me in app/views/hons/show.html.erb</p>
+<p><b>タイトル</b><%= @hon.title %></p>
+
+<p><b>感想</b><%= @hon.body %></p>
+
+<%= link_to "編集", edit_hon_path(@hon) %>
+<%= link_to "戻る", hons_path %>

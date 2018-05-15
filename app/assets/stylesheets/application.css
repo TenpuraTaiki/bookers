@@ -7,3 +7,11 @@
 .top-waku p{
     color: brown
 }
+.index-waku{
+    width: 100%;
+    background-color: rgb(54, 54, 54);
+    padding: 100px 10px;
+}
+.index-waku h1, .index-waku table, .index-waku h2, .index-waku p, .index-waku a{
+    color: white
+}
