@@ -1,4 +1,6 @@
 <div class="index-waku">
+<p><%= notice %></p>
+
     <h1>Books</h1>
     <table border="1" class="ichiran">
         <tr>
@@ -12,7 +14,7 @@
             <td><%= hon.body %></td>
             <td><%= link_to "show", hon_path(hon.id) %></td>
             <td><%= link_to "edit", edit_hon_path(hon.id) %></td>
-            <td><%= link_to "destroy", hon_path(hon.id), method: :delete, "data-confilm" => "本当に削除しますか？" %></td>
+            <td><%= link_to "destroy", hon_path(hon.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
         </tr>
         <% end %>
     </table>

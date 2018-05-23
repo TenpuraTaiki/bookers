@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/top' => 'root#top'
-  resources :hons
+  root 'root#top'
+  resources :hons, only: [:create, :index, :show, :edit, :update, :destroy]
   
 end

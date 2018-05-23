@@ -8,14 +8,13 @@ class HonsController < ApplicationController
     @hon = Hon.find(params[:id])
   end
 
-  def new
-  end
-
   def create
-    hon = Hon.new(hon_params)
-    hon.save
-
-    redirect_to hons_path
+    @hon = Hon.new(hon_params)
+    if @hon.save
+      redirect_to hons_path, notice:'投稿成功'
+    else
+      redirect_to hons_path, notice:'投稿できませんでした。タイトルと感想は空白にできません'
+    end
   end
 
   def edit
@@ -24,8 +23,12 @@ class HonsController < ApplicationController
 
   def update
     hon = Hon.find(params[:id])
-    hon.update(hon_params)
-    redirect_to hon_path(hon)
+    if hon.update(hon_params)
+      redirect_to hon_path(hon), notice:'編集成功'
+    else
+      redirect_to hon_path(hon), notice:'編集できませんでした。タイトルと感想は空白にできません'
+    end
+
   end
 
   def destroy
